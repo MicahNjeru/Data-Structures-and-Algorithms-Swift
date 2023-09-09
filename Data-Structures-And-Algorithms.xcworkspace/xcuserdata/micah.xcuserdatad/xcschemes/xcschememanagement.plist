@@ -4,6 +4,27 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Arrays-Lab (Playground) 1.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
+		<key>Arrays-Lab (Playground) 2.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
+		<key>Arrays-Lab (Playground).xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>Big-O-Notation (Playground) 1.xcscheme</key>
 		<dict>
 			<key>isShown</key>
