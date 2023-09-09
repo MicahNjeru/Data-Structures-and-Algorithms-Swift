@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Maximum-consecutive-ones-(1s).playground">
+   </FileRef>
+   <FileRef
       location = "group:Arrays-Lab.playground">
    </FileRef>
    <FileRef
