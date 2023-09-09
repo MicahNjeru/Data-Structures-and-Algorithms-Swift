@@ -31,6 +31,6 @@ func bigO(){
     }
     
     // O(log n)
-    // binary search
+    // binary search - halves the data set each time
 }
 
