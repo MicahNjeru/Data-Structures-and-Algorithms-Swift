@@ -22,11 +22,11 @@ func maxConsOne(_ arr: [Int]) -> Int {
     return globalCount // 1
 }
 
-print(maxConsOne([1, 1, 0, 1, 1, 1]))
-print(maxConsOne([1, 1, 0, 1, 1]))
-print(maxConsOne([0, 0, 0, 0, 0]))
-print(maxConsOne([1, 1, 1, 1, 1, 1]))
-print(maxConsOne([1, 1, 1, 1, 1, 1]))
+maxConsOne([1, 1, 0, 1, 1, 1])
+maxConsOne([1, 1, 0, 1, 1])
+maxConsOne([0, 0, 0, 0, 0])
+maxConsOne([1, 1, 1, 1, 1, 1])
+maxConsOne([0, 1, 1, 1, 1, 1])
 
 
 // 1 + 1 + n + n + n + 1 = 3 + 3n
