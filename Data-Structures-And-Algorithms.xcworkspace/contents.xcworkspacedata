@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Contains-duplicate-with-distance.playground">
+   </FileRef>
+   <FileRef
       location = "group:Contains-duplicate.playground">
    </FileRef>
    <FileRef
