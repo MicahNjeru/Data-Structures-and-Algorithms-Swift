@@ -30,4 +30,4 @@ maxConsOne([0, 1, 1, 1, 1, 1])
 
 
 // 1 + 1 + n + n + n + 1 = 3 + 3n
-// Solution time complexity: 3n -> O(n)
+// Time complexity solution: 3n -> O(n)

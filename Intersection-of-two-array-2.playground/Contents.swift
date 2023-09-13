@@ -54,4 +54,4 @@ print(inter([1, 2, 2, 1, 3], [2, 2, 2]))
 // Func1: 1 + 1 + 1 + n + m = 3 + n + m
 // Func2: 1 + 1 + 1 = 3
 
-// Final time complexity: 6 + n + m -> O(n + m)
+// Final time complexity solution: 6 + n + m -> O(n + m)

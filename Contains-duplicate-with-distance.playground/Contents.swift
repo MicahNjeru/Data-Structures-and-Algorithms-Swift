@@ -80,4 +80,4 @@ print(containsDups([1, 2, 3, 1, 2, 3], 2))
 
 
 // 1 + 1 + n + n + n + 1 + 1 = 4 + 3n
-// Solution time complexity: 3n -> O(n)
+// Time complexity solution: 3n -> O(n)

@@ -55,4 +55,4 @@ majority([1, 1, 1, 3, 3, 2, 2, 2])
 
 
 // 1 + 1 + 1 + n + n + n + n + n + n = 3 + 6n
-// Solution time complexity: 6n -> O(n)
+// Time complexity solution: 6n -> O(n)

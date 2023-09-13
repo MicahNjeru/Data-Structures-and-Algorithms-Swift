@@ -12,3 +12,39 @@ import Foundation
 /// Solution:
 
 
+func removeDups(_ arr: [Int]) -> Int {
+    // We check if the input array count is more than or equal to 2, if not, ...
+    // we return the array count since it will not contain more than 2 "unique-duplicates"
+    if arr.count <= 2 { // 1
+        return arr.count
+    }
+    
+    // We convert the input array to a variable
+    var arr = arr // 1
+    
+    // We initialize the index to 1 ...
+    var index = 1 // 1
+    for i in 2..<arr.count { // n
+        // so that we can check if:
+        // 1. The 2nd element in the array is not equal to the 1st element in the array ...
+        //              OR
+        // 2. The 3rd element in the array is not equal to the 2nd element in the array ...
+        // if either is true, meaning there's a different element compared to it's former element, ...
+        if arr[index] != arr[index - 1] || arr[i] != arr[index] {
+            // we increment the index by 1 ...
+            index += 1
+            // and assign the array position at recently incremented index to the current element being looped over
+            arr[index] = arr[i]
+        }
+        print("\(i) step: ", arr)
+    }
+    return index + 1 // 1
+}
+
+
+// Function test
+print(removeDups([1, 1, 1, 2, 2, 3, 3]))
+print(removeDups([0, 0, 1, 1, 1, 1, 2, 3, 3]))
+
+// 1 + 1 + 1 + n + 1 = 4 + n
+// Time complexity solution: n -> O(n)

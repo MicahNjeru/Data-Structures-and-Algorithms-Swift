@@ -33,4 +33,4 @@ func inter(_ arr1: [Int], _ arr2: [Int]) -> [Int] {
 print(inter([1, 2, 2, 1], [2, 2]))
 
 // 1 + n + 1 + n + n = 2 + 3n
-// Solution time complexity: 3n -> O(n)
+// Time complexity solution: 3n -> O(n)

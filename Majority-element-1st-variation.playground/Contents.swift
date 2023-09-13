@@ -59,4 +59,4 @@ majority([3, 2, 3, 2, 2])
 majority([3, 2, 3, 2, 3, 2, 2])
 
 // 1 + 1 + 1 + n + n + n + n + n + 1 = 4 + 5n
-// Solution time complexity: 5n -> O(n)
+// Time complexity solution: 5n -> O(n)
