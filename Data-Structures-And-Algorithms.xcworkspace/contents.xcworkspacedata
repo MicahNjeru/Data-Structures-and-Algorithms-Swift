@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Remove-element-in-place.playground">
+   </FileRef>
+   <FileRef
       location = "group:Move-zeros-end-of-the-array.playground">
    </FileRef>
    <FileRef
