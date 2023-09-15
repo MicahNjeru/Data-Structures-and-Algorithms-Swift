@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Palindrome-string.playground">
+   </FileRef>
+   <FileRef
       location = "group:FizzBuzz.playground">
    </FileRef>
    <FileRef
