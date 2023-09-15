@@ -13,18 +13,25 @@ import Cocoa
 
 
 func isPalindrome(_ str: String) -> Bool {
+    // We first assign the string to a variable and convert it into a lowercased array
     var arr = Array(str.lowercased()) // 1
+    // then initialize variable counters
     var i = 0 // 1
     var j = arr.count - 1 // 1
     
+    // We check if i and j have reached the middle yet, that is they are equal if so ...
     while i <= j { // n
+        // we check if the common element is the same, if it is ...
         if arr[i] == arr[j] {
+            // we increment i and decrement j
             i += 1
             j -= 1
         } else {
+            // otherwise we return it's not a palindrome
             return false
         }
     }
+    // We return it's a palindrome if it satisfied the if condition
     return true // 1
 }
 
