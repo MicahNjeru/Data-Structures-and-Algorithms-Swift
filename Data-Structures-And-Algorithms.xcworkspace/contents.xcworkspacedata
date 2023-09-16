@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:First-unique-char-string.playground">
+   </FileRef>
+   <FileRef
       location = "group:Palindrome-string.playground">
    </FileRef>
    <FileRef
