@@ -209,20 +209,63 @@ func mergeTwoLists(_ l1: Node?, _ l2: Node?) -> Node? {
 }
 
 // Function test
-var list1 = Node(data: 1)
-list1.next = Node(data: 3)
-
-var list2 = Node(data: 1)
-list2.next = Node(data: 2)
-list2.next = Node(data: 3)
-list2.next = Node(data: 4)
-
-let result = mergeTwoLists(list1, list2)
-var curr = result
-
-while curr != nil {
-    print(curr!.data)
-    curr = curr!.next
-}
+//var list1 = Node(data: 1)
+//list1.next = Node(data: 3)
+//
+//var list2 = Node(data: 1)
+//list2.next = Node(data: 2)
+//list2.next = Node(data: 3)
+//list2.next = Node(data: 4)
+//
+//let result = mergeTwoLists(list1, list2)
+//var curr = result
+//
+//while curr != nil {
+//    print(curr!.data)
+//    curr = curr!.next
+//}
 
 // Time complexity of the above is O(n) because we only loop once
+
+/// Detecting Loops/Cycles in Linked list
+func detectLoop(_ list: Node?) -> Bool {
+    // We check if the input list is empty, if so, return false and exit the function
+    if list == nil {
+        return false
+    }
+    
+    // We assign the input list to two variables for slow checking and fast checking
+    var slow = list
+    var fast = list
+    
+    // We loop over the slow linked list first, node by node while we loop over the fast linked list
+    // at two positions concurrently
+    while slow!.next != nil && fast!.next != nil && fast!.next?.next != nil {
+        // if the condition above is met, we move the slow pointer to the next node
+        slow = slow!.next
+        // and we move the fast pointer to the next-next node (skip the next node and move to the one after it)
+        fast = fast!.next!.next
+        
+        // if slow node data is same as the fast node data, we return there's a loop
+        if slow!.data == fast!.data {
+            return true
+        }
+    }
+    
+    // if all is checked and there's no match, we return false
+    return false
+}
+
+
+// Function test
+var loopList = Node(data: 1)
+loopList.next = Node(data: 2)
+let three = Node(data: 3)
+
+loopList.next!.next = three
+loopList.next!.next!.next = Node(data: 4)
+loopList.next!.next!.next!.next = Node(data: 5)
+loopList.next!.next!.next!.next!.next = three
+
+print(detectLoop(loopList))
+
