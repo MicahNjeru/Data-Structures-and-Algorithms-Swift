@@ -32,6 +32,7 @@ class LinkedList {
         return curr
     }
     
+    /// Deleting a Node in a Linked List
     // We create a method for deleting a Node in the linked list
     func delete(key: Int) -> Node? {
         // We check if the head is currently equal to nil, if so ...
@@ -71,6 +72,7 @@ class LinkedList {
         return curr
     }
     
+    /// Inserting to a Linked List
     // We create a function for inserting a new node at the beginning of the linked list
     func insert(data: Int) {
         // We create a new node by using the Node class and passing in the data
@@ -81,7 +83,7 @@ class LinkedList {
         // at first
         head = newNode
     }
-    
+    /// Appending to a Linked List
     // We create a function for inserting a new node at the end of the linked list
     func append(data: Int) {
         // We check if the current head is nil, if so ...
@@ -115,6 +117,7 @@ class LinkedList {
     }
 }
 
+// Function test
 let list = LinkedList()
 list.insert(data: 10)
 list.insert(data: 9)
@@ -137,4 +140,25 @@ print("\n")
 let _ = list.delete(key: 12)
 list.printList()
 print("\n")
+// End of Function test
 
+/// Reversing Linked List
+func reverseList() {
+    var current = list.head
+    var next: Node?
+    var prev: Node?
+    
+    while current != nil {
+        next = current!.next
+        current!.next = prev
+        prev = current
+        current = next
+    }
+    list.head = prev
+}
+
+// Function test
+reverseList()
+list.printList()
+
+// Time complexity is O(n)
