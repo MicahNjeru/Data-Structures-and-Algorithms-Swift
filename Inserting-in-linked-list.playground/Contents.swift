@@ -30,9 +30,38 @@ class LinkedList {
     
     // We create a method for deleting a Node in the linked list
     func delete(key: Int) -> Node? {
+        // We check if the head is currently equal to nil, if so ...
         if head == nil {
+            // we return the head
             return head
         }
+        
+        // We create variables for tracking head, and previous Nodes
+        var curr = head
+        var prev: Node?
+        
+        // We loop while checking if:
+        // the current pointer is not equal to nil and
+        // the data of the current Node is not equal to the key passed in, if so ...
+        while curr != nil && curr!.data != key {
+            // we assign previous variable to current Node
+            prev = curr
+            // Then assign the current Node variable to the next Node that was previously being iterated over
+            curr = curr!.next
+        }
+        
+        // If the previous node (which was assigned above) is nill (meaning it's reached the end of the loop) and ...
+        // the current Node variable is not equal to nil
+        if prev == nil && curr != nil {
+            // we assign the head variable to the current node data
+            head = curr!.next
+        } else if curr == nil {
+            return nil
+        } else {
+            prev!.next = curr!.next
+        }
+        
+        return curr
     }
     
     // We create a function for inserting a new node at the beginning of the linked list
@@ -92,6 +121,13 @@ list.append(data: 11)
 
 let found = list.find(key: 8)
 print(found?.data ?? -1)
+print("\n")
 
 let findEleven = list.find(key: 12)
 print(findEleven?.data ?? -1)
+print("\n")
+
+let _ = list.delete(key: 12)
+list.printList()
+print("\n")
+
