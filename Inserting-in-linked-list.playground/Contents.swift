@@ -17,6 +17,24 @@ class LinkedList {
     // We create the head as optional since it's going to be nil at the beginning
     var head: Node?
     
+    // We create a method for finding a Node in a linked list
+    func find(key: Int) -> Node? {
+        var curr = head
+        
+        while curr != nil && curr!.data != key {
+            curr = curr!.next
+        }
+        
+        return curr
+    }
+    
+    // We create a method for deleting a Node in the linked list
+    func delete(key: Int) -> Node? {
+        if head == nil {
+            return head
+        }
+    }
+    
     // We create a function for inserting a new node at the beginning of the linked list
     func insert(data: Int) {
         // We create a new node by using the Node class and passing in the data
@@ -67,7 +85,13 @@ list.insert(data: 9)
 list.insert(data: 8)
 list.insert(data: 7)
 list.insert(data: 6)
-list.printList()
-print("\n")
+//list.printList()
+//print("\n")
 list.append(data: 11)
-list.printList()
+//list.printList()
+
+let found = list.find(key: 8)
+print(found?.data ?? -1)
+
+let findEleven = list.find(key: 12)
+print(findEleven?.data ?? -1)
