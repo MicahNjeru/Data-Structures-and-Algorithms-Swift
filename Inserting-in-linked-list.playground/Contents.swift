@@ -130,16 +130,16 @@ list.append(data: 11)
 //list.printList()
 
 let found = list.find(key: 8)
-print(found?.data ?? -1)
-print("\n")
+//print(found?.data ?? -1)
+//print("\n")
 
 let findEleven = list.find(key: 12)
-print(findEleven?.data ?? -1)
-print("\n")
+//print(findEleven?.data ?? -1)
+//print("\n")
 
 let _ = list.delete(key: 12)
-list.printList()
-print("\n")
+//list.printList()
+//print("\n")
 // End of Function test
 
 /// Reversing Linked List
@@ -159,6 +159,57 @@ func reverseList() {
 
 // Function test
 reverseList()
-list.printList()
+//list.printList()
 
 // Time complexity is O(n)
+
+
+/// Function for Merging two sorted Linked List
+func mergeTwoLists(_ l1: Node?, _ l2: Node?) -> Node? {
+    var list1 = l1
+    var list2 = l2
+    
+    var result: Node? = Node(data: -1)
+    var head = result
+    
+    while list1 != nil && list2 != nil {
+        if list1!.data < list2!.data {
+            result!.next = list1
+            list1 = list1!.next
+        } else {
+            result!.next = list2
+            list2 = list2!.next
+        }
+        
+        result = result!.next
+    }
+    
+    if list1 != nil {
+        result!.next = list1
+    } else {
+        result!.next = list2
+    }
+    
+    
+    head = head!.next
+    return head
+}
+
+// Function test
+var list1 = Node(data: 1)
+list1.next = Node(data: 3)
+
+var list2 = Node(data: 1)
+list2.next = Node(data: 2)
+list2.next = Node(data: 3)
+list2.next = Node(data: 4)
+
+let result = mergeTwoLists(list1, list2)
+var curr = result
+
+while curr != nil {
+    print(curr!.data)
+    curr = curr!.next
+}
+
+// Time complexity of the above is O(n) because we only loop once
