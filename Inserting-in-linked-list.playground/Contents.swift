@@ -166,32 +166,45 @@ reverseList()
 
 /// Function for Merging two sorted Linked List
 func mergeTwoLists(_ l1: Node?, _ l2: Node?) -> Node? {
+    // We create two Linked list variables and initialize with inputs
     var list1 = l1
     var list2 = l2
     
+    // We create a Node with data of -1 to be act as placeholder for the first Node
     var result: Node? = Node(data: -1)
     var head = result
     
+    // We loop over the two linked lists until none is null
     while list1 != nil && list2 != nil {
+        // we then check if the data of first list is less than the second list, if so ...
         if list1!.data < list2!.data {
+            // we insert the lesser node to the results array of linked lists
             result!.next = list1
+            // we move the pointer to the next node
             list1 = list1!.next
+            // if list2 is lesser than the list1
         } else {
+            // we insert the lesser node to the results array of linked lists
             result!.next = list2
+            // we move the pointer to the next node
             list2 = list2!.next
         }
-        
+        // We move the pointer to the end of the linked list
         result = result!.next
     }
     
+    // We check if list1 is not empty, if so ...
     if list1 != nil {
+        // we assign the result array pointer to list1
         result!.next = list1
+        // otherwise ...
     } else {
+        // we assign the result array pointer to list2
         result!.next = list2
     }
-    
-    
+    // We move the head to the next node (who's data isn't -1)
     head = head!.next
+    // we return the head of the first node
     return head
 }
 
