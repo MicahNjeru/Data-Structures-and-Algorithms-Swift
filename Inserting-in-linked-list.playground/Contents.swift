@@ -19,12 +19,16 @@ class LinkedList {
     
     // We create a method for finding a Node in a linked list
     func find(key: Int) -> Node? {
+        // we assign the current variable pointer to the head
         var curr = head
         
+        // we check if the current Node pointer is not equal to nil and the current head (data) is not equal to the key we ...
+        // are searching then we ...
         while curr != nil && curr!.data != key {
+            // assign the current variable to the next Node
             curr = curr!.next
         }
-        
+        // We return the current variable which is holding the key we were searching for.
         return curr
     }
     
@@ -55,12 +59,15 @@ class LinkedList {
         if prev == nil && curr != nil {
             // we assign the head variable to the current node data
             head = curr!.next
+            // if the current variable Node is nill ...
         } else if curr == nil {
+            // we return nil since we are at the end of the linked list
             return nil
+            // we assign the previous' next variable Node address to the current next variable's Node address
         } else {
             prev!.next = curr!.next
         }
-        
+        // we return the current (latest Node variable pointer)
         return curr
     }
     
