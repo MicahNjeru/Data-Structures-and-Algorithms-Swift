@@ -1,7 +1,7 @@
 import Cocoa
 
 // Node for establishing linked list data format
-class Node {
+public class Node {
     // We declare properties of a node
     var data: Int
     var next: Node?
@@ -13,7 +13,7 @@ class Node {
 }
 
 // We create a linked list class
-class LinkedList {
+public class LinkedList {
     // We create the head as optional since it's going to be nil at the beginning
     var head: Node?
     
@@ -267,5 +267,33 @@ loopList.next!.next!.next = Node(data: 4)
 loopList.next!.next!.next!.next = Node(data: 5)
 loopList.next!.next!.next!.next!.next = three
 
-print(detectLoop(loopList))
+//print(detectLoop(loopList))
+
+/// Length of the loop in a Linked List
+func detectAndCountCycle(_ list: Node?) -> Bool {
+    var slow = list
+    var fast = list
+    
+    while slow!.next != nil && fast!.next != nil && fast!.next != nil {
+        slow = slow!.next
+        fast = fast!.next!.next
+        
+        if slow!.data == fast!.data {
+            var count = 0
+            
+            repeat {
+                count += 1
+                fast = fast!.next
+            } while slow!.data != fast!.data
+            print("cycle len: \(count)")
+            return true
+        }
+    }
+    return false
+}
+
+// Time complexity = O(n*m)
+// For bigger input, it's going to be = O(n^2)
+print(detectAndCountCycle(loopList))
+
 
