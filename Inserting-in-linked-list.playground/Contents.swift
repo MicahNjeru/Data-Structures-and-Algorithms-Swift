@@ -271,9 +271,11 @@ loopList.next!.next!.next!.next!.next = three
 
 /// Length of the loop in a Linked List
 func detectAndCountCycle(_ list: Node?) -> Bool {
+    // We create variables for holding the linked list
     var slow = list
     var fast = list
     
+    // We loop through the list using two trackers, slow and fast (fast moves in steps of 2 checking 2 at a time)
     while slow!.next != nil && fast!.next != nil && fast!.next != nil {
         slow = slow!.next
         fast = fast!.next!.next
