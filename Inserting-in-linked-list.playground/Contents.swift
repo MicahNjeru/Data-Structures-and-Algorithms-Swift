@@ -288,6 +288,23 @@ func detectAndCountCycle(_ list: Node?) -> Bool {
                 fast = fast!.next
             } while slow!.data != fast!.data
             print("cycle len: \(count)")
+            
+            /// Detecting start of the loop in a linked list
+            var pointer1 = list
+            var pointer2 = list
+            
+            while count > 0 {
+                pointer1 = pointer1!.next
+                count -= 1
+            }
+            
+            while pointer1!.data != pointer2!.data {
+                pointer1 = pointer1!.next
+                pointer2 = pointer2!.next
+            }
+            
+            print("Start of the cycle is: \(pointer1!.data)")
+            
             return true
         }
     }
@@ -298,4 +315,32 @@ func detectAndCountCycle(_ list: Node?) -> Bool {
 // For bigger input, it's going to be = O(n^2)
 print(detectAndCountCycle(loopList))
 
+// Time complexity for detecting start of loop = O(n*m)
 
+
+/// Linked list cycle detection without counting
+func findCycleStart(_ list: Node?) -> Node? {
+    var slow = list
+    var fast = list
+    
+    while slow != nil && fast!.next != nil && fast!.next!.next != nil {
+        slow = slow!.next
+        fast = fast!.next!.next
+        
+        if slow!.data == fast!.data {
+            slow = list
+            while slow!.data != fast!.data {
+                slow = slow!.next
+                fast = fast!.next
+            }
+            return slow
+        }
+    }
+    
+    return nil
+}
+
+// Function test
+print(findCycleStart(loopList)!.data)
+
+// Time complexity of findCycleStart = O(n^2)
